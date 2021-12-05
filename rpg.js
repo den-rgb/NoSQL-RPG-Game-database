@@ -1,0 +1,469 @@
+
+db.Shop.insertMany([
+{
+    type : "axe",
+    durability : 70 ,
+    cost:130,
+    quantity:3,
+    sharpness:"sharp",
+    addedProtection:0,
+    skin:"default",
+},
+{ 
+    type : "sword",
+    durability : 45 ,
+    cost:90,
+    quantity:5,
+    sharpness:"razor_sharp",
+    addedProtection:0,
+    skin:"default"
+},
+{ 
+    type : "potion",
+    durability : 1 ,
+    cost:25,
+    quantity:15,
+    sharpness:"",
+    addedProtection:0,
+    skin:"default"
+},
+{ 
+    type : "shield",
+    durability : 150 ,
+    cost:250,
+    quantity:1,
+    sharpness:"",
+    addedProtection:90,
+    skin:"default"
+},
+{ 
+    type : "helmet",
+    durability : 37 ,
+    cost:75,
+    quantity:1,
+    sharpness:"",
+    addedProtection:20,
+    skin:"default"
+},
+{ 
+    type : "body_armour",
+    durability : 54 ,
+    cost:110,
+    quantity:1,
+    sharpness:"",
+    addedProtection:50,
+    skin:"default"
+},
+{ 
+    type : "leg_armour",
+    durability : 50 ,
+    cost:100,
+    quantity:1,
+    sharpness:"",
+    addedProtection:30,
+    skin:"default"
+},{
+skins:[
+    {
+        name:"ChristmasCollection",
+        cost:100
+    },
+    {
+        name:"HalloweenCollection",
+        cost:130
+    },
+    {
+        name:"LegendaryCollection",
+        cost:250
+    }
+]}
+]
+)
+
+db.Character.insertMany([
+{
+    name:"Celest",
+    class:"Mage",
+    intelligence:"high",
+    physicalStrength:"low",
+    perferedAttackStyle:"spell_casting",
+    skin:"LegendaryCollection",
+    inventorySpace:15,
+    skills: [
+        {
+            gunWielding:0,
+            magic:100,
+            pickPocket:30,
+            maxStamina:70,
+            swordsmanship:15
+        }
+    ]
+    },
+    {
+    name:"Igor",
+    class:"Brawler",
+    intelligence:"low",
+    physicalStrength:"very_high",
+    perferedAttackStyle:"mace",
+    skin:"ChristmasCollection",
+    inventorySpace:10,
+    skills: [
+        {
+            gunWielding:50,
+            magic:0,
+            pickPocket:40,
+            maxStamina:190,
+            swordsmanship:7
+        }
+    ]
+    },
+    {
+    name:"Bolt",
+    class:"Mage",
+    intelligence:"high",
+    physicalStrength:"medium",
+    perferedAttackStyle:"electric_firearm",
+    skin:"default",
+    inventorySpace:15,
+    skills: [
+        {
+            gunWielding:50,
+            magic:0,
+            pickPocket:40,
+            maxStamina:190,
+            swordsmanship:7
+        }
+    ]
+    },
+    {
+    name:"Charles",
+    class:"SwordsMan",
+    intelligence:"high",
+    physicalStrength:"high",
+    perferedAttackStyle:"Sword",
+    skin:"LegendaryCollection",
+    inventorySpace:20,
+    skills: [
+        {
+            gunWielding:0,
+            magic:0,
+            pickPocket:0,
+            maxStamina:300,
+            swordsmanship:100
+        }
+    ]
+    },
+    {
+    name:"Krunk",
+    class:"Brawler",
+    intelligence:"very_low",
+    physicalStrength:"high",
+    perferedAttackStyle:"anything",
+    skin:"HalloweenCollection",
+    inventorySpace:12,
+    skills: [
+        {
+            gunWielding:70,
+            magic:0,
+            pickPocket:30,
+            maxStamina:210,
+            swordsmanship:70
+        }
+    ]              
+    },
+    {
+    name:"Confi",
+    class:"Spy",
+    intelligence:"medium",
+    physicalStrength:"medium",
+    perferedAttackStyle:"throwingKnife",
+    skin:"default",
+    inventorySpace:20,          
+    skills: [
+        {
+            gunWielding:60,
+            magic:30,
+            pickPocket:90,
+            maxStamina:150,
+            swordsmanship:90
+        }
+    ]
+    },
+])
+
+db.Map.insertMany([
+    {
+    name:"Oasis",
+    AbilityAmplifier:[
+            {
+            strength:"-10",
+            magic:"+20",
+            speed:"-30"
+            }
+        ],
+    difficulty:"hard",
+    landmarks:[
+            {
+                name:"Sanded_Temple",
+                monsters:[
+                {
+                    monster:"CapriCobra",
+                    difficulty:"easy",
+                    spawnRate:"high",
+                    skin:"LegendaryCollection"
+                },
+                {
+                    monster:"TempleMummy",
+                    difficulty:"medium",
+                    spawnRate:"high",
+                    skin:"default"
+                },
+                {
+                    monster:"AncientGod",
+                    difficulty:"hard",
+                    spawnRate:"very_low",
+                    skin:"LegendaryCollection"
+                }
+            ]},
+            {
+                name:"Dusty_Dungeon",
+                monsters:[
+                {
+                    monster:"Rats",
+                    difficulty:"easy",
+                    spawnRate:"high",
+                    skin:"ChristmasCollection"
+                },
+                {
+                    monster:"SkeletonGuard",
+                    difficulty:"hard",
+                    spawnRate:"low",
+                    skin:"default"
+                }
+            ]}
+        ]
+    },
+    {
+    name:"LavaMountain",
+    AbilityAmplifier:[
+        {
+            strength:"+30",
+            magic:"+50",
+            speed:"-50"
+        }
+    ],
+    difficulty:"medium",
+    landmarks:[
+        {
+            name:"Forge",
+            monsters:[
+            {
+                monster:"LavaSlug",
+                difficulty:"easy",
+                spawnRate:"high",
+                skin:"LegendaryCollection"
+            },
+            {
+                monster:"BrackishSludge",
+                difficulty:"medium",
+                spawnRate:"medium",
+                skin:"default"
+            }
+        ]},
+        {
+            name:"Lava_Pool",
+            monsters:[
+            {
+                monster:"FireSpirits",
+                difficulty:"easy",
+                spawnRate:"high",
+                skin:"ChristmasCollection"
+            },
+            {
+                monster:"Golem",
+                difficulty:"hard",
+                spawnRate:"very_low",
+                skin:"HalloweenCollection"
+            }
+        ]}
+    ]
+},
+{
+    name:"Forest",
+    AbilityAmplifier:[
+    {
+        strength:"0",
+        magic:"+80",
+        speed:"+20"
+    }
+],
+    difficulty:"easy",
+    landmarks:[
+    {
+        name:"WitchHouse",
+        monsters:[
+        {
+            monster:"wolf",
+            difficulty:"medium",
+            spawnRate:"high",
+            skin:"ChristmasCollection"
+        },
+        {
+            monster:"Witch",
+            difficulty:"hard",
+            spawnRate:"medium",
+            skin:"default"
+        }
+    ]},
+    {
+        name:"AncientTreeHouse",
+        monsters:[
+        {
+            monster:"Fairy",
+            difficulty:"easy",
+            spawnRate:"high",
+            skin:"default"
+        },
+        {
+            monster:"Gnome",
+            difficulty:"medium",
+            spawnRate:"high",
+            skin:"HalloweenCollection"
+        },
+        {
+            monster:"Troll",
+            difficulty:"hard",
+            spawnRate:"very_low",
+            skin:"default"
+        }
+    ]}
+]
+},
+    ]
+
+)
+
+
+db.Character.updateOne({
+    name:"Confi",
+    class:"Spy"
+},{
+    $set:{
+        name:"Stellar",
+        class:"Spy",
+        intelligence:"high",
+        physicalStrength:"medium",
+        perferedAttackStyle:"Shuriken",
+        skin:"ChristmasCollection",
+        inventorySpace:20,          
+        skills: [
+        {
+            gunWielding:60,
+            magic:30,
+            pickPocket:110,
+            maxStamina:150,
+            swordsmanship:90
+        }
+    ]
+    }
+
+}
+
+)
+
+
+db.Shop.deleteOne(
+    {
+       type:'helmet'
+    })
+
+
+db.Character.updateMany({
+    inventorySpace:{$lte:25}},
+    {$set:{
+        inventorySpace:25
+    }}
+)
+
+db.Character.find({'skills.magic':{$gt:0}}).pretty()
+
+db.Map.aggregate([{
+    $match:{difficulty:{"$ne":"hard"}},
+}]).pretty()
+
+db.Map.aggregate([{
+    $project:{
+        name:1,
+        NumLandmarksWithMonsters:{$size:'$landmarks.monsters'},
+        monster:{name:'$landmarks.monsters.monster',difficulty:'$landmarks.monsters.difficulty'}
+    }},
+    {$limit:2}
+]).pretty()
+
+db.Shop.aggregate([{
+    $project:{
+    type : 1,
+    durability : 1 ,
+    cost:1,
+    quantity:1,
+    sharpness:1,
+    addedProtection:1,
+    skin:1
+    }},
+    {$sort:{
+        cost:-1
+    }},
+    {$skip:2},
+]).pretty()
+
+db.Shop.aggregate([{
+    $count:"quantity"
+}])
+
+db.Map.aggregate([
+    {$unwind:'$landmarks'},
+    {$sample:{size:1}}
+]).pretty()
+
+db.Character.aggregate([
+    {$unwind:'$skills'},
+    {$group:{
+        _id:'$name',
+        thiefStat:{$sum:{$add:['$skills.pickPocket','$skills.maxStamina']}},
+        brawlStatAverage:{$avg:{$add:['$skills.gunWielding','$skills.swordsmanship','$skills.maxStamina']}},
+        bestStat:{$sum:{$max:['$skills.gunWielding','$skills.swordsmanship','$skills.maxStamina','$skills.pickPocket','$skills.magic']}},
+        worstStat:{$sum:{$min:['$skills.gunWielding','$skills.swordsmanship','$skills.maxStamina','$skills.pickPocket','$skills.magic']}},
+    }},
+    {$out:"CharacterStats"
+}]).pretty()
+
+db.Shop.aggregate([
+    {$project:{
+        reverseArray:{$reverseArray:'$skins'},
+    }},
+]).pretty()
+
+db.Character.aggregate([{
+    
+    $project:{
+        name:'$name',
+        CanUseMagic:{
+            $filter:{
+                input:'$skills',
+                as:'magicSkill',
+                cond:{$gte:['$$magicSkill.magic',10]}
+            }
+        },
+        CantUseMagic:{
+            $filter:{
+                input:'$skills',
+                as:'noMagicSkill',
+                cond:{$eq:['$$noMagicSkill.magic',0]}
+            }
+        }
+    }
+}]).pretty()
+
+db.Character.remove({
+    name:"Bolt"
+})
